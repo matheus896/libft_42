@@ -6,7 +6,7 @@
 /*   By: matheusms1 <matheusms1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 10:04:42 by matheusms1        #+#    #+#             */
-/*   Updated: 2026/05/18 11:45:14 by matheusms1       ###   ########.fr       */
+/*   Updated: 2026/05/24 21:40:06 by matheusms1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')

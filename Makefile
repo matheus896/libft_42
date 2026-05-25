@@ -9,8 +9,6 @@ RM = rm -f
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_strlen.c ft_isalpha.c
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
