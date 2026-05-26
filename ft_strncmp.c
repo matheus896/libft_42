@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matalmei <matalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 19:24:37 by matheusms1        #+#    #+#             */
-/*   Updated: 2026/05/26 12:36:31 by matalmei         ###   ########.fr       */
+/*   Created: 2026/05/26 15:53:23 by matalmei          #+#    #+#             */
+/*   Updated: 2026/05/26 16:34:20 by matalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
+	size_t	i;
 
-	s = src;
-	d = dst;
-	if (d < s)
-	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	else if (d > s)
-	{
-		i = n;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
-	}
-	return (d);
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && (s1[i] || s2[i]) && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+// int main(void)
+// {
+// 	printf("difference is: %d\n", ft_strncmp("abc\0z", "abc\0a", 5));
+// 	return (0);
+// }
