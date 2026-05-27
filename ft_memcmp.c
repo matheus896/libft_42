@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matheusms1 <matheusms1@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/27 17:56:59 by matheusms1        #+#    #+#             */
-/*   Updated: 2026/05/27 18:43:51 by matheusms1       ###   ########.fr       */
+/*   Created: 2026/05/27 18:52:44 by matheusms1        #+#    #+#             */
+/*   Updated: 2026/05/27 20:37:58 by matheusms1       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	result;
-	int	sign;
+	size_t				i;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
 
 	i = 0;
-	result = 0;
-	sign = 1;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	ptr1 = s1;
+	ptr2 = s2;
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sign * result);
+	return (0);
 }
+
+// int	main(void)
+// {
+// 	printf("a diferenca e: %d\n", ft_memcmp("abC", "abd", 4));
+// 	return (0);
+// }
